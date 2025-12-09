@@ -1,8 +1,8 @@
 const { add, sub, mul } = require('./module/math');
 
 console.log(add(10, 20));
-console.log(sub(25, 10));
-console.log(mul(25, 10));
+console.log(sub(50, 20));
+console.log(mul(5, 72));
 
 const student = {
     name: "Piyush",
