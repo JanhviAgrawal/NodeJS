@@ -10,7 +10,6 @@ let allUsers = [];
 
 app.get("/", (req, res) => {
     return res.render('table', {
-        name: "Janhvi",
         allUsers
     });
 });
