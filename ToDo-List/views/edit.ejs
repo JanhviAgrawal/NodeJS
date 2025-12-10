@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Task</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Fredoka+One&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            background: #f3d5ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .box {
+            background: #e9c6ff;
+            width: 400px;
+            padding: 30px;
+            border-radius: 30px;
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            font-family: 'Fredoka One';
+            color: #5a189a;
+            margin-bottom: 20px;
+        }
+
+        input,
+        select {
+            border-radius: 15px !important;
+            padding: 12px !important;
+        }
+
+        .btn-purple {
+            background: #7b2cbf;
+            border: none;
+            color: white;
+            border-radius: 20px;
+            padding: 12px;
+            width: 100%;
+        }
+
+        .btn-purple:hover {
+            background: #6820a1;
+        }
+
+        .form-check {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            /* space between checkbox and label */
+            margin-bottom: 15px;
+        }
+
+        .form-check-input {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+            background-color: white;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .form-check-input:checked {
+            background-color: #7b2cbf;
+            border-color: #7b2cbf;
+        }
+
+        .form-check-input:checked::after {
+            content: "";
+            color: white;
+            font-size: 12px;
+            position: absolute;
+            top: 1px;
+            left: 2px;
+        }
+
+        .form-check-label {
+            margin: 0;
+            line-height: 1.2;
+        }
+
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        a {
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #5a189a;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h2>Edit Task ✏️</h2>
+
+        <form action="/updateList" method="post">
+            <input type="hidden" name="id" value="<%= list.id %>">
+
+            <div class="form-group mb-3">
+                <input type="text" name="taskName" class="form-control" value="<%= list.taskName %>" required>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="category">Category:</label>
+                <select name="category" class="form-control">
+                    <option value="General" <%=list.category==='General' ? 'selected' : '' %>>General</option>
+                    <option value="Work" <%=list.category==='Work' ? 'selected' : '' %>>Work</option>
+                    <option value="Personal" <%=list.category==='Personal' ? 'selected' : '' %>>Personal</option>
+                    <option value="Other" <%=list.category==='Other' ? 'selected' : '' %>>Other</option>
+                </select>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="priority">Priority:</label>
+                <select name="priority" class="form-control">
+                    <option value="Low" <%=list.priority==='Low' ? 'selected' : '' %>>Low 🟢</option>
+                    <option value="Medium" <%=list.priority==='Medium' ? 'selected' : '' %>>Medium 🟡</option>
+                    <option value="High" <%=list.priority==='High' ? 'selected' : '' %>>High 🔴</option>
+                </select>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="dueDate">Due Date:</label>
+                <input type="date" name="dueDate" class="form-control" value="<%= list.dueDate %>">
+            </div>
+
+            <div class="form-check mb-3">
+                <input type="checkbox" name="completed" class="form-check-input" id="completed" <%=list.completed
+                    ? 'checked' : '' %>>
+                <label class="form-check-label" for="completed">Mark as Completed ✅</label>
+            </div>
+
+            <button class="btn btn-purple w-100">Update Task</button>
+        </form>
+
+        <a href="/">⬅ Back to List</a>
+    </div>
+
+</body>
+
+</html>
