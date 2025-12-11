@@ -63,10 +63,6 @@ app.get("/deleteList", (req, res) => {
     return res.redirect('/');
 });
 
-app.get('/not_found',(req,res)=>{
-    res.render('not_found');
-})
-
 app.listen(PORT, (err) => {
     if (err) {
         console.log("Server not Started..");
