@@ -51,24 +51,43 @@ This application is ideal for showcasing **backend fundamentals, database integr
 
 ANIMEAPP/
 ├── config/
+
 │   └── db.config.js          # MongoDB connection setup
+
 ├── model/
+
 │   └── anime.model.js        # Mongoose schema & model
+
 ├── node_modules/             # Project dependencies
+
 ├── public/
+
 ├── images/                   # Static images
+
 ├── js/
+
 │   ├── bootstrap.bundle.min.js
+
 │   └── remix/
+
 ├── css/
+
 │   ├── bootstrap.min.css
+
 │   └── style.css             # Custom styling
+
 ├── views/
+
 │   ├── edit.ejs              # Edit anime page
+
 │   ├── form.ejs              # Add anime page
+
 │   └── home.ejs              # Home / listing page
+
 ├── package.json
+
 ├── package-lock.json
+
 └── server.js                 # Application entry point
 
 
