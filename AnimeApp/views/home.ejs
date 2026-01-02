@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime</title>
+    <!-- remix-icon css  -->
+    <link rel="stylesheet" href="remix/fonts/remixicon.css" type="text/css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/bootstrap.min.css" type="text/css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/style.css" type="text/css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg flex-column position-absolute top-0 start-0 w-100 z-3">
+        <div class="container">
+            <div class="logo me-0">
+                <a href="javascript:void(0)">
+                    <img src="/images/Anime-logo.png" alt="Logo" class="img-fluid" width="80px">
+                </a>
+            </div>
+            <!-- <form>
+                <input class="form-control" type="search" placeholder="Search...">
+            </form> -->
+            <div class="w-auto mt-4 d-flex justify-content-end">
+                <ul class="d-flex align-items-center p-0">
+                    <li><a href="javascript:void(0)" class="btn btn-danger text-white me-1" data-bs-toggle="offcanvas"
+                            data-bs-target="#off">News</a>
+                    </li>
+                    <li class="">
+                        <a href="javascript:void(0)" class="btn btn-light" data-bs-toggle="modal"
+                            data-bs-target="#item1">Join Now</a>
+                    </li>
+                </ul>
+            </div>
+            <a href="javascript:void(0)" class="d-lg-none mt-2 ms-1" data-bs-toggle="offcanvas" data-bs-target="#menu">
+                <i class="ri-menu-line text-white fs-2 border px-2 py-1 rounded"></i>
+            </a>
+        </div>
+        <nav class="offcanvas w-50 offcanvas-start bg-dark" id="menu" data-bs-backdrop="static" data-bs-scroll="true">
+            <div class="offcanvas-header">
+                <img src="images/Anime-logo.png" alt="logo" class="img-fluid" width="80px">
+                <a href="javascript:void(0)" class="close-button ms-auto" data-bs-dismiss="offcanvas">
+                    <i class="ri-close-large-line text-white fs-4"></i>
+                </a>
+            </div>
+            <div class="offcanvas-body mt-3">
+                <ul class="navbar-nav shadow-lg">
+                    <li class="nav-item"><a href="javascript:void(0)" class="nav-link text-white ms-4 me-4">Home</a>
+                    </li>
+                    <li class="nav-item"><a href="javascript:void(0)" class="nav-link text-white ms-4 me-4">Profile</a>
+                    </li>
+                    <li class="nav-item"><a href="javascript:void(0)" class="nav-link text-white ms-4 me-4">Writing</a>
+                    </li>
+                    <li class="nav-item"><a href="javascript:void(0)" class="nav-link text-white ms-4 me-4">Design</a>
+                    </li>
+                    <li class="nav-item"><a href="javascript:void(0)"
+                            class="nav-link text-white ms-4 me-4">Marketing</a>
+                    </li>
+                    <li class="nav-item"><a href="javascript:void(0)" class="nav-link text-white ms-4 me-4">Blog</a>
+                    </li>
+                    <li class="nav-item"><a href="javascript:void(0)" class="nav-link text-white ms-4 me-4">Map</a></li>
+                    <li class="nav-item"><a href="javascript:void(0)" class="nav-link text-white ms-4 me-4">Articles</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- offcanvas  -->
+    <div class="offcanvas offcanvas-end text-bg-dark" id="off" data-bs-backdrop="static" data-bs-scroll="true">
+        <div class="offcanvas-header d-flex justify-content-between">
+            <h3>Latest News</h3>
+            <a href="javascript:void(0)" class="close-button" data-bs-dismiss="offcanvas">
+                <i class="ri-close-large-line text-white fs-4"></i>
+            </a>
+        </div>
+        <div class="offcanvas-body">
+            <div class="row">
+                <div class="col-4">
+                    <img src="images/n1.jpg" alt="n1" class="img-fluid">
+                </div>
+                <div class="col-8">
+                    <p><a href="javascript:void(0)">Solo Leveling Season 2 Episode 7: Exact release date, time and
+                            more</a></p>
+                </div>
+            </div>
+
+            <div class="mt-3">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="images/n2.jpg" alt="n2" class="img-fluid">
+                    </div>
+                    <div class="col-8">
+                        <p><a href="javascript:void(0)">Demon Slayer: Kimetsu no Yaiba Infinity Castle Coming to
+                                Theatres in 2025! Exact release date, time and more</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-3">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="images/n10.jpg" alt="n3" class="img-fluid">
+                    </div>
+                    <div class="col-8">
+                        <p><a href="javascript:void(0)">JJK Author Gege Teases A Continuation In The Future...</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-3">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="images/n4.jpg" alt="n4" class="img-fluid">
+                    </div>
+                    <div class="col-8">
+                        <p><a href="javascript:void(0)">Boruto: Two Blue Vortex Vol. 4 On Sale 2/4 (JST)! Plus, Original
+                                Ninja...</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-3">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="images/n5.jpg" alt="n4" class="img-fluid">
+                    </div>
+                    <div class="col-8">
+                        <p><a href="javascript:void(0)">Kaiju No. 8 Hypes Season 2 Release With New Year's ...</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-3">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="images/n6.jpg" alt="n4" class="img-fluid">
+                    </div>
+                    <div class="col-8">
+                        <p><a href="javascript:void(0)">Anime News And Facts: "Dandadan Manga will be ...</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-3">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="images/n7.jpg" alt="n4" class="img-fluid">
+                    </div>
+                    <div class="col-8">
+                        <p><a href="javascript:void(0)">The Promised Neverland : Shirai, Kaiu, Demizu, Posuka</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-3">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="images/n8.jpg" alt="n4" class="img-fluid">
+                    </div>
+                    <div class="col-8">
+                        <p><a href="javascript:void(0)">Sakamoto Days: Exact release date, final trailer, where to
+                                ...</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- login  -->
+    <div class="modal fade" id="item1" data-bs-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Our Member!!</h2>
+                    <a href="javascript:void(0)" class="btn-close" data-bs-dismiss="modal"></a>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <label class="form-label">Email:</label>
+                        <input type="email" placeholder="Enter Your Email..." class="form-control">
+                        <label class="form-label">Password:</label>
+                        <input type="password" placeholder="Enter Your Password..." class="form-control">
+                        <p class="text-secondary"><small>New Member - please register your self...</small></p>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a href="javascript:void(0)" class="btn btn-danger">Login</a>
+                    <a href="javascript:void(0)" class="btn btn-outline-danger" data-bs-toggle="modal"
+                        data-bs-target="#item2">Register</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Registration -->
+    <div class="modal fade" id="item2" data-bs-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Be Our Member!!</h2>
+                    <a href="javascript:void(0)" class="btn-close" data-bs-dismiss="modal"></a>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <label class="form-label">Name</label>
+                        <input type="text" placeholder="Enter Your Name..." class="form-control">
+                        <label class="form-label">Number:</label>
+                        <input type="tel" placeholder="Enter Your Phone Number..." class="form-control">
+                        <label class="form-label">Email:</label>
+                        <input type="email" placeholder="Enter Your Email..." class="form-control">
+                        <label class="form-label">Password:</label>
+                        <input type="password" placeholder="Enter Your Password..." class="form-control">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a href="javascript:void(0)" class="btn btn-outline-danger" data-bs-toggle="modal"
+                        data-bs-target="#item3">Join</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Complete -->
+    <div class="modal fade" id="item3" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Most Welcome!!</h3>
+                    <a href="javascript:void(0)" class="btn-close" data-bs-dismiss="modal"></a>
+                </div>
+                <div class="modal-body">
+                    <h5>Now You Are Member Of the Group...!!🎊🎉✨🥳</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- banner  -->
+        <section>
+            <div class="carousel slide carousel-fade" id="slider" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="5000">
+                        <div
+                            class="slide1 w-100 vh-100 d-flex justify-content-center align-items-center flex-column text-center">
+                            <h2 class="text-white display-4 fw-bolder">Ryomen Sukuna</h2>
+                            <p class="text-white fs-6 w-50 mx-auto">I'm the King of Curses. I can do whatever I want.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <div
+                            class="slide2 w-100 vh-100 d-flex justify-content-center align-items-center flex-column text-center">
+                            <h2 class="text-white display-4 fw-bolder">Yuuji Itadori</h2>
+                            <p class="text-white fs-6 w-50 mx-auto">There are no rules in a fight. The one who wins is
+                                the one who's left standing.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <div
+                            class="slide3 w-100 vh-100 d-flex justify-content-center align-items-center flex-column text-center">
+                            <h2 class="text-white display-4 fw-bolder">Ryomen Sukuna</h2>
+                            <p class="text-white fs-6 w-50 mx-auto">Human beings are such interesting creatures... but
+                                they're all weak.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <div
+                            class="slide4 w-100 vh-100 d-flex justify-content-center align-items-center flex-column text-center">
+                            <h2 class="text-white display-4 fw-bolder">Ryomen Sukuna</h2>
+                            <p class="text-white fs-6 w-50 mx-auto">You should have burned everything you cared about to
+                                the ground before standing before me.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-indicators">
+                    <a href="javascript:void(0)" class="active" data-bs-toggle="carousel" data-bs-target="#slider"
+                        data-bs-slide-to="0"></a>
+                    <a href="javascript:void(0)" data-bs-toggle="carousel" data-bs-target="#slider"
+                        data-bs-slide-to="1"></a>
+                    <a href="javascript:void(0)" data-bs-toggle="carousel" data-bs-target="#slider"
+                        data-bs-slide-to="2"></a>
+                    <a href="javascript:void(0)" data-bs-toggle="carousel" data-bs-target="#slider"
+                        data-bs-slide-to="3"></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- blog  -->
+        <section class="blog">
+            <div class="container">
+                <div class="blog-title text-center my-5">
+                    <h2>Anime World</h2>
+                    <p>In the anime world, fate is written in scars, and only those who walk through darkness learn how
+                        to shine.</p>
+                </div>
+                <div class="jjk-btn-abc">
+                    <a class="jjk-dark-btn" href="/addAnime">
+                        ADD MORE ANIMES
+                    </a>
+                </div>
+
+                <div id="swipe" class="carousel slide">
+                    <div class="carousel-inner">
+
+                        <% for (let i=0; i < allAnimes.length; i +=4) { %>
+                            <div class="carousel-item <%= i === 0 ? 'active' : '' %>">
+                                <div class="row">
+
+                                    <% allAnimes.slice(i, i + 4).forEach(anime=> { %>
+                                        <div class="col-lg-3 col-md-6 mb-4">
+                                            <div class="card h-100">
+                                                <div class="rounded-3 overflow-hidden">
+                                                    <img src="<%= anime.anime_img %>" class="w-100"
+                                                        alt="<%= anime.anime_name %>">
+                                                </div>
+
+                                                <div class="card-body">
+                                                    <h5 class="card-title">
+                                                        <%= anime.anime_name %>
+                                                    </h5>
+                                                    <p class="mb-1">
+                                                        <%= anime.anime_genres %>
+                                                    </p>
+                                                    <small class="text-muted d-block mb-2">
+                                                        <%= anime.anime_lang %> | Episodes: <%= anime.anime_ep_num %>
+                                                    </small>
+
+                                                    <!-- Read More Button with data attributes -->
+                                                    <a href="javascript:void(0)" class="btn btn-danger btn-sm read-more"
+                                                        data-id="<%= anime._id %>" data-name="<%= anime.anime_name %>"
+                                                        data-production="<%= anime.anime_production %>"
+                                                        data-author="<%= anime.anime_auth %>"
+                                                        data-language="<%= anime.anime_lang %>"
+                                                        data-genres="<%= anime.anime_genres %>"
+                                                        data-episodes="<%= anime.anime_ep_num %>"
+                                                        data-seasons="<%= anime.anime_season %>"
+                                                        data-image="<%= anime.anime_img %>">
+                                                        Read More
+                                                    </a>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <% }) %>
+
+                                </div>
+                            </div>
+                            <% } %>
+
+                    </div>
+
+                    <!-- Controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#swipe" data-bs-slide="prev">
+                        <i class="ri-arrow-left-s-line fs-1 text-dark"></i>
+                    </button>
+
+                    <button class="carousel-control-next" type="button" data-bs-target="#swipe" data-bs-slide="next">
+                        <i class="ri-arrow-right-s-line fs-1 text-dark"></i>
+                    </button>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content rounded-4 shadow-lg">
+
+                            <div class="modal-header bg-dark text-white">
+                                <h5 class="modal-title" id="staticBackdropLabel"></h5>
+                                <button type="button" class="btn-close btn-close-white"
+                                    data-bs-dismiss="modal"></button>
+                            </div>
+
+                            <div class="modal-body">
+                                <div id="modalContent"></div>
+                            </div>
+
+                            <div class="modal-footer justify-content-between">
+                                <div>
+                                    <a id="editBtn" class="btn btn-warning px-4">Edit</a>
+                                    <a id="deleteBtn" class="btn btn-danger px-4">Delete</a>
+                                </div>
+                                <button class="btn btn-secondary px-4" data-bs-dismiss="modal">
+                                    Close
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container container">
+            <!-- Brand -->
+            <div class="footer-brand">
+                <h2 class="footer-logo"><a href="#"><img src="images/Anime-logo.png" alt="Logo" width="60px"></a></h2>
+                <p class="footer-tagline">Anime Center</p>
+            </div>
+
+            <!-- Links -->
+            <div class="footer-links">
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-nav">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Social -->
+            <div class="footer-social">
+                <h3 class="footer-title">Follow Us</h3>
+                <div class="footer-social-icons">
+                    <a href="#">🌐</a>
+                    <a href="#">🐦</a>
+                    <a href="#">📘</a>
+                    <a href="#">📸</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 <span>Anime</span>. All rights reserved.
+        </div>
+    </footer>
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelectorAll('.read-more').forEach(btn => {
+            btn.addEventListener('click', function () {
+
+                const animeId = this.dataset.id;
+                const name = this.dataset.name;
+                const production = this.dataset.production;
+                const author = this.dataset.author;
+                const language = this.dataset.language;
+                const genres = this.dataset.genres;
+                const episodes = this.dataset.episodes;
+                const seasons = this.dataset.seasons;
+                const image = this.dataset.image;
+
+                // Modal Title
+                document.getElementById('staticBackdropLabel').innerText = name;
+
+                // Modal Body
+                document.getElementById('modalContent').innerHTML = `
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="${image}" class="img-fluid rounded-3 shadow">
+                </div>
+                <div class="col-md-9">
+                    <p><strong>Production House:</strong> ${production}</p>
+                    <p><strong>Anime Author:</strong> ${author}</p>
+                    <p><strong>Anime Language:</strong> ${language}</p>
+                    <p><strong>Anime Genres:</strong> ${genres}</p>
+                    <p><strong>Total Episodes:</strong> ${episodes}</p>
+                    <p><strong>Total Seasons:</strong> ${seasons}</p>
+                </div>
+            </div>
+        `;
+
+                // Routes
+                document.getElementById('editBtn').href = `/editAnime/${animeId}`;
+                document.getElementById('deleteBtn').href = `/deleteAnime?animeId=${animeId}`;
+
+                // Show Modal
+                new bootstrap.Modal(document.getElementById('staticBackdrop')).show();
+            });
+        });
+    </script>
+
+</body>
+
+</html>

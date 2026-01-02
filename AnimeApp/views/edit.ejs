@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Anime</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: url("/images/muichiro.jpeg") no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Layout */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 1100px;
+            width: 100%;
+            gap: 50px;
+        }
+
+        /* Quotes Card */
+        .quotes {
+            flex: 1;
+            background: rgba(25, 78, 96, 0.8);
+            border-radius: 16px;
+            padding: 32px 28px;
+            color: #f3efff;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+            font-size: 1.2rem;
+            font-weight: 500;
+            line-height: 1.6;
+            text-align: center;
+            border: 1px solid rgba(155, 120, 255, 0.35);
+        }
+
+        .quote-text {
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        /* Form Card */
+        .form-card {
+            flex: 1;
+            background: rgba(36, 138, 137, 0.75);
+            border-radius: 16px;
+            padding: 32px 28px;
+            border: 1px solid rgba(155, 120, 255, 0.35);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45),
+                inset 0 0 12px rgba(155, 120, 255, 0.08);
+        }
+
+        /* Heading */
+        h1 {
+            text-align: center;
+            color: #f3efff;
+            font-weight: 700;
+            margin-bottom: 26px;
+            letter-spacing: 0.6px;
+        }
+
+        /* Labels */
+        .form-label {
+            color: #c9f3ff;
+            font-size: 0.86rem;
+        }
+
+        /* Inputs */
+        .form-control {
+            background: rgba(15, 40, 50, 0.95);
+            border: 1px solid rgba(120, 210, 255, 0.45);
+            border-radius: 10px;
+            color: #eafcff;
+            padding: 9px 12px;
+            font-size: 0.92rem;
+        }
+
+        /* Input focus */
+        .form-control:focus {
+            background: rgba(20, 55, 70, 0.98);
+            border-color: #6ce9ff;
+            box-shadow: 0 0 8px rgba(108, 233, 255, 0.45);
+            color: #ffffff;
+            outline: none;
+        }
+
+        /* Placeholder */
+        .form-control::placeholder {
+            color: rgba(234, 252, 255, 0.55);
+        }
+
+        /* Autofill fix (Chrome / Edge) */
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus {
+            -webkit-text-fill-color: #eafcff !important;
+            -webkit-box-shadow: 0 0 0px 1000px rgba(15, 40, 50, 0.95) inset !important;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+
+        /* Button */
+        .btn-primary {
+            margin-top: 16px;
+            background: linear-gradient(135deg, #6ce9ff, #8ceaff);
+            border: none;
+            border-radius: 22px;
+            font-weight: 600;
+            padding: 11px;
+            letter-spacing: 0.5px;
+            color: #00343f;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .quotes,
+            .form-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Anime Quotes Section -->
+        <!-- <div class="quotes">
+            <h3>Anime Quotes</h3>
+            <div class="quote-text">
+                <p>No matter how many people you lose, you have no choice but to go on living.<br>- Tanjiro Kamado</p>
+            </div>
+            <div class="quote-text">
+                <p>Don't cry. Don't despair. Now's not the time for that. - Giyu Tomioka</p>
+            </div>
+            <div class="quote-text">
+                <p>If you feel yourself hitting a wall, then climb over it. - Kyojuro Rengoku</p>
+            </div>
+        </div> -->
+
+        <!-- Anime Form Section -->
+        <div class="form-card">
+            <h1>Update Anime</h1>
+            <form method="post" action="/updateAnime">
+                <input type="hidden" name="id" value="<%= anime._id %>">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Anime Name</label>
+                        <input type="text" name="anime_name" value="<%= anime.anime_name %>" class="form-control"
+                            required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Anime Production House</label>
+                        <input type="text" name="anime_production" value="<%= anime.anime_production %>"
+                            class="form-control" required>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Author</label>
+                        <input type="text" name="anime_auth" value="<%= anime.anime_auth %>" class="form-control"
+                            required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Language</label>
+                        <input type="text" name="anime_lang" value="<%= anime.anime_lang %>" class="form-control"
+                            required>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Genre</label>
+                        <input type="text" name="anime_genres" value="<%= anime.anime_genres %>" class="form-control"
+                            required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Number of Episodes</label>
+                        <input type="number" name="anime_ep_num" value="<%= anime.anime_ep_num %>" class="form-control"
+                            required>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Number of Seasons</label>
+                        <input type="number" name="anime_season" value="<%= anime.anime_season %>" class="form-control"
+                            required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Image URL</label>
+                        <input type="text" name="anime_img" value="<%= anime.anime_img %>" class="form-control"
+                            required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Update Anime</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
