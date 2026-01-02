@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Form</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .form-card {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-primary {
+            border-radius: 6px;
+        }
+
+        .form-control {
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="text-center mt-5 mb-4">Add Book</h1>
+
+    <div class="container col-4">
+        <form method="post" action="/addBook" class="form-card">
+            <div class="mb-3">
+                <label class="form-label">Book Name</label>
+                <input type="text" name="book_name" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Author</label>
+                <input type="text" name="book_author" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Price</label>
+                <input type="number" name="book_price" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Language</label>
+                <input type="text" name="book_lang" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Image</label>
+                <input type="text" name="book_image" value="<%= book.book_image %>" class="form-control" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Add Book</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
