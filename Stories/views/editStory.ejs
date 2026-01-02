@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" style="height: auto; min-height: 100%;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Content | <%= story.story_name %>
+    </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-gradient-to-br from-black via-neutral-900 to-neutral-800 text-neutral-200 antialiased"
+    style="height: auto; min-height: 100%;">
+
+    <div class="min-h-screen flex items-center justify-center p-4 sm:p-6 lg:p-8">
+        <div class="w-full max-w-lg bg-neutral-900 rounded-2xl shadow-2xl p-8 sm:p-10 border border-neutral-800">
+
+            <div class="mb-8 text-center">
+                <h1
+                    class="text-4xl font-bold bg-gradient-to-r from-neutral-200 to-neutral-400 bg-clip-text text-transparent mb-2">
+                    Edit Content</h1>
+                <div class="w-24 h-1 bg-gradient-to-r from-neutral-500 to-neutral-700 mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Form action includes the ID -->
+            <form method="POST" action="/updateStory/<%= story._id %>" enctype="multipart/form-data" class="space-y-6">
+
+                <!-- Story Name -->
+                <div class="space-y-2">
+                    <label class="block text-sm font-semibold text-neutral-300">Story Name</label>
+                    <input type="text" name="story_name" value="<%= story.story_name %>" required
+                        class="w-full px-4 py-3 rounded-lg border-2 border-neutral-700 bg-neutral-800 text-neutral-200 focus:outline-none focus:border-neutral-500 transition-all">
+                </div>
+
+                <!-- Category (Checkboxes with 'checked' logic) -->
+                <div class="space-y-3">
+                    <label class="block text-sm font-semibold text-neutral-300">Categories</label>
+                    <div class="grid grid-cols-2 gap-4 p-4 rounded-lg border-2 border-neutral-700 bg-neutral-800/50">
+                        <% const cats=['explore', 'hiragana' , 'katakana' , 'manga' , 'manhwa' , 'folk' ]; const
+                            labels=['Explore Stories', 'Hiragana Reads' , 'Katakana Reads' , 'Manga' , 'Manhwa'
+                            , 'Folk Stories' ]; cats.forEach((val, index)=> { %>
+                            <label class="flex items-center space-x-3 cursor-pointer group">
+                                <input type="checkbox" name="story_category" value="<%= val %>"
+                                    <%=story.story_category.includes(val) ? 'checked' : '' %>
+                                class="w-5 h-5 rounded border-neutral-600 bg-neutral-700 text-neutral-500">
+                                <span class="text-sm text-neutral-400 group-hover:text-neutral-200">
+                                    <%= labels[index] %>
+                                </span>
+                            </label>
+                            <% }) %>
+                    </div>
+                </div>
+
+                <!-- Vertical Image -->
+                <div class="space-y-2">
+                    <label class="block text-sm font-semibold text-neutral-300">Vertical Poster (Leave blank to keep
+                        current)</label>
+                    <div class="flex items-center gap-4">
+                        <label for="verticalUpload" class="flex-1 cursor-pointer">
+                            <div
+                                class="px-4 py-3 border-2 border-dashed border-neutral-700 rounded-lg text-center text-sm text-neutral-400">
+                                Change Vertical Image
+                            </div>
+                            <input type="file" id="verticalUpload" name="story_image_vertical" accept="image/*"
+                                onchange="previewImage(event, 'verticalPreview')" class="hidden">
+                        </label>
+                        <img id="verticalPreview" src="/uploads/<%= story.story_image_vertical %>"
+                            class="w-16 h-20 object-cover rounded-lg border-2 border-neutral-700">
+                    </div>
+                </div>
+
+                <!-- Horizontal Image -->
+                <div class="space-y-2">
+                    <label class="block text-sm font-semibold text-neutral-300">Horizontal Hover (Leave blank to keep
+                        current)</label>
+                    <div class="flex items-center gap-4">
+                        <label for="horizontalUpload" class="flex-1 cursor-pointer">
+                            <div
+                                class="px-4 py-3 border-2 border-dashed border-neutral-700 rounded-lg text-center text-sm text-neutral-400">
+                                Change Horizontal Image
+                            </div>
+                            <input type="file" id="horizontalUpload" name="story_image_horizontal" accept="image/*"
+                                onchange="previewImage(event, 'horizontalPreview')" class="hidden">
+                        </label>
+                        <img id="horizontalPreview" src="/uploads/<%= story.story_image_horizontal %>"
+                            class="w-20 h-16 object-cover rounded-lg border-2 border-neutral-700">
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="space-y-2">
+                    <label class="block text-sm font-semibold text-neutral-300">Description</label>
+                    <textarea name="story_description" rows="4" required
+                        class="w-full px-4 py-3 rounded-lg border-2 border-neutral-700 bg-neutral-800 text-neutral-200 resize-none"><%= story.story_description %></textarea>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit"
+                        class="w-full py-3.5 rounded-lg bg-gradient-to-r from-neutral-700 to-neutral-800 font-semibold hover:from-neutral-600 transition-all">
+                        Update Story
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function previewImage(event, previewId) {
+            const input = event.target;
+            const preview = document.getElementById(previewId);
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = (e) => preview.src = e.target.result;
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</body>
+
+</html>
