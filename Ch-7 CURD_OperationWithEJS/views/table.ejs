@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Users List</title>
+
+    <style>
+        body {
+            background: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+        }
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 25px 30px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        table th,
+        table td {
+            padding: 12px 10px;
+            text-align: center;
+        }
+
+        table th {
+            background: #4CAF50;
+            color: white;
+            font-weight: 600;
+        }
+
+        table tr:hover {
+            background: #f5f5f5;
+        }
+
+        .btn {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .primary {
+            background: #2196F3;
+        }
+
+        .danger {
+            background: #f44336;
+        }
+
+        .success {
+            background: #4CAF50;
+        }
+
+        .top-btn {
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>User List</h1>
+
+        <a href="/addUserPage" class="btn success top-btn">Add User</a>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Phone No.</th>
+                    <th>Address</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% if (allUsers.length === 0) { %>
+                <tr>
+                    <td colspan="6" style="padding:25px; font-size:18px; text-align:center;">
+                        <h4>No User Found — please add</h4>
+                    </td>
+                </tr>
+
+                <% } else { %>
+                <% allUsers.forEach((user) => { %>
+                <tr>
+                    <td><%= user.name %></td>
+                    <td><%= user.email %></td>
+                    <td><%= user.password %></td>
+                    <td><%= user.phone %></td>
+                    <td><%= user.address %></td>
+
+                    <td>
+                        <a href="/editPage?userId=<%= user.id %>" class="btn primary">Edit</a>
+                        <a href="/deleteUser?userId=<%= user.id %>" class="btn danger">Delete</a>
+                    </td>
+                </tr>
+                <% }) %>
+                <% } %>
+            </tbody>
+
+        </table>
+    </div>
+
+</body>
+
+</html>
