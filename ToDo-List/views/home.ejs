@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Task List</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Fredoka+One&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            background: #f3d5ff;
+            font-family: 'Poppins', sans-serif;
+            padding: 40px;
+        }
+
+        h1 {
+            font-family: 'Fredoka One';
+            color: #5a189a;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .task-card {
+            background: #e9c6ff;
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .task-completed {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+
+        .badge-category {
+            background-color: #d47bff;
+            color: white;
+            border-radius: 12px;
+            padding: 3px 10px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+        }
+
+        .priority-low {
+            color: green;
+            font-weight: bold;
+        }
+
+        .priority-medium {
+            color: orange;
+            font-weight: bold;
+        }
+
+        .priority-high {
+            color: red;
+            font-weight: bold;
+        }
+
+        .btn-edit,
+        .btn-delete {
+            margin-right: 5px;
+        }
+
+        .task-info {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🐾 My Cute Task List</h1>
+
+    <div class="container">
+        <a href="/addTaskPage" class="btn btn-purple mb-4 w-100">➕ Add New Task</a>
+
+        <% if (allLists.length === 0) { %>
+            <p style="text-align:center; color:#5a189a;">No tasks yet! Add your first cute task 🐾</p>
+        <% } %>
+
+        <% allLists.forEach(function(list) { %>
+            <div class="task-card <%= list.completed ? 'task-completed' : '' %>">
+                <h5>
+                    <%= list.taskName %> <% if (list.completed) { %>✅<% } %>
+                </h5>
+
+                <div class="task-info">
+                    <span class="badge-category"><%= list.category %></span> |
+                    <span class="priority-<%= list.priority.toLowerCase() %>"><%= list.priority %></span>
+                </div>
+
+                <div class="task-info">
+                    Created Date: <%= list.creationDate || new Date().toLocaleDateString() %>
+                </div>
+
+                <div class="task-info">
+                    Due Date: <%= list.dueDate || '/' %>
+                </div>
+
+                <div class="d-flex">
+                    <a href="/editPage?listID=<%= list.id %>" class="btn btn-sm btn-edit btn-purple">✏️ Edit</a>
+                    <a href="/deleteList?listID=<%= list.id %>" class="btn btn-sm btn-delete btn-danger">🗑️ Delete</a>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+
+</body>
+
+</html>
